@@ -1,0 +1,7 @@
+--library tink_unittest
+--library bp_test_utils
+--library hxnodejs
+-cp .
+-cp test
+-main RunTests
+--js out.js
