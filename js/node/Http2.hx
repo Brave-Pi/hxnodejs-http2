@@ -7,10 +7,10 @@ import js.node.http2.Session;
 @:jsRequire('http2')
 typedef Http2 = js.node.http2.Constants;
 
-typedef Headers = haxe.DynamicAccess<Array<String>>;
-typedef Http1IncomingHttpHeaders = Headers;
-typedef OutgoingHttpHeaders = Headers;
+
 typedef IncomingHttpHeaders = haxe.DynamicAccess<String>;
+typedef Http1IncomingHttpHeaders = IncomingHttpHeaders;
+typedef OutgoingHttpHeaders = haxe.DynamicAccess<haxe.extern.EitherType<String, Array<String>>>;
 
 typedef IncomingHttpStatusHeader = {
 	@:optional var status:Float;
