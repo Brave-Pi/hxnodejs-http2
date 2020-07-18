@@ -2,12 +2,12 @@ package js.node.http2;
 import js.lib.Symbol;
 import js.lib.Error;
 
-extern class Http2Stream extends js.node.Stream<Http2Stream> {
+extern class Http2Stream extends js.node.stream.Duplex<Http2Stream> {
 	var readonly : Dynamic;
 	var aborted : Bool;
 	var bufferSize : Float;
 	var closed : Bool;
-	var destroyed : Bool;
+	// var destroyed : Bool;
 	var endAfterHeaders : Bool;
 	@:optional
 	var id : Float;
