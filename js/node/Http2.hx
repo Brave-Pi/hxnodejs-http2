@@ -10,7 +10,7 @@ typedef Http2 = js.node.http2.Constants;
 typedef Headers = haxe.DynamicAccess<Array<String>>;
 typedef Http1IncomingHttpHeaders = Headers;
 typedef OutgoingHttpHeaders = Headers;
-typedef IncomingHttpHeaders = Headers;
+typedef IncomingHttpHeaders = haxe.DynamicAccess<String>;
 
 typedef IncomingHttpStatusHeader = {
 	@:optional var status:Float;
