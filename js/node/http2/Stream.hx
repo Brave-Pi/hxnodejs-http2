@@ -9,15 +9,12 @@ extern class Http2Stream extends js.node.Stream<Http2Stream> {
 	var closed : Bool;
 	var destroyed : Bool;
 	var endAfterHeaders : Bool;
-	@:optional
-	var id : Float;
+	@:optional var id : Float;
 	var pending : Bool;
 	var rstCode : Float;
 	var sentHeaders : OutgoingHttpHeaders;
-	@:optional
-	var sentInfoHeaders : Array<OutgoingHttpHeaders>;
-	@:optional
-	var sentTrailers : OutgoingHttpHeaders;
+	@:optional var sentInfoHeaders : Array<OutgoingHttpHeaders>;
+	@:optional var sentTrailers : OutgoingHttpHeaders;
 	var session : Http2Session;
 	var state : StreamState;
 	function close(?code:Float, ?callback:Void -> Void):Void;

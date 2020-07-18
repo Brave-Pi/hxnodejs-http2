@@ -13,41 +13,28 @@ typedef OutgoingHttpHeaders = Headers;
 typedef IncomingHttpHeaders = Headers;
 
 typedef IncomingHttpStatusHeader = {
-	@:optional
-	var status:Float;
+	@:optional var status:Float;
 };
 
 typedef StreamPriorityOptions = {
-	@:optional
-	var exclusive:Bool;
-	@:optional
-	var parent:Float;
-	@:optional
-	var weight:Float;
-	@:optional
-	var silent:Bool;
+	@:optional var exclusive:Bool;
+	@:optional var parent:Float;
+	@:optional var weight:Float;
+	@:optional var silent:Bool;
 };
 
 typedef StreamState = {
-	@:optional
-	var localWindowSize:Float;
-	@:optional
-	var state:Float;
-	@:optional
-	var localClose:Float;
-	@:optional
-	var remoteClose:Float;
-	@:optional
-	var sumDependencyWeight:Float;
-	@:optional
-	var weight:Float;
+	@:optional var localWindowSize:Float;
+	@:optional var state:Float;
+	@:optional var localClose:Float;
+	@:optional var remoteClose:Float;
+	@:optional var sumDependencyWeight:Float;
+	@:optional var weight:Float;
 };
 
 typedef ServerStreamResponseOptions = {
-	@:optional
-	var endStream:Bool;
-	@:optional
-	var waitForTrailers:Bool;
+	@:optional var endStream:Bool;
+	@:optional var waitForTrailers:Bool;
 };
 
 typedef StatOptions = {
@@ -56,20 +43,15 @@ typedef StatOptions = {
 };
 
 typedef ServerStreamFileResponseOptions = {
-	@:optional
-	function statCheck(stats:js.node.fs.Stats, headers:OutgoingHttpHeaders, statOptions:StatOptions):haxe.extern.EitherType<Void, Bool>;
-	@:optional
-	var waitForTrailers:Bool;
-	@:optional
-	var offset:Float;
-	@:optional
-	var length:Float;
+	@:optional function statCheck(stats:js.node.fs.Stats, headers:OutgoingHttpHeaders, statOptions:StatOptions):haxe.extern.EitherType<Void, Bool>;
+	@:optional var waitForTrailers:Bool;
+	@:optional var offset:Float;
+	@:optional var length:Float;
 };
 
 typedef ServerStreamFileResponseOptionsWithError = {
 	> ServerStreamFileResponseOptions,
-	@:optional
-	function onError(err:Int):Void;
+	@:optional function onError(err:Int):Void;
 };
 
 typedef AlternativeServiceOptions = {
@@ -77,48 +59,31 @@ typedef AlternativeServiceOptions = {
 };
 
 typedef SessionOptions = {
-	@:optional
-	var maxDeflateDynamicTableSize:Float;
-	@:optional
-	var maxSessionMemory:Float;
-	@:optional
-	var maxHeaderListPairs:Float;
-	@:optional
-	var maxOutstandingPings:Float;
-	@:optional
-	var maxSendHeaderBlockLength:Float;
-	@:optional
-	var paddingStrategy:Float;
-	@:optional
-	var peerMaxConcurrentStreams:Float;
-	@:optional
-	var settings:Settings;
-	@:optional
-	function selectPadding(frameLen:Float, maxFrameLen:Float):Float;
-	@:optional
-	function createConnection(authority:js.node.url.URL, option:SessionOptions):js.node.stream.Duplex.IDuplex;
+	@:optional var maxDeflateDynamicTableSize:Float;
+	@:optional var maxSessionMemory:Float;
+	@:optional var maxHeaderListPairs:Float;
+	@:optional var maxOutstandingPings:Float;
+	@:optional var maxSendHeaderBlockLength:Float;
+	@:optional var paddingStrategy:Float;
+	@:optional var peerMaxConcurrentStreams:Float;
+	@:optional var settings:Settings;
+	@:optional function selectPadding(frameLen:Float, maxFrameLen:Float):Float;
+	@:optional function createConnection(authority:js.node.url.URL, option:SessionOptions):js.node.stream.Duplex.IDuplex;
 };
 
 typedef ClientSessionOptions = {
 	> SessionOptions,
-	@:optional
-	var maxReservedRemoteStreams:Float;
-	@:optional
-	var createConnection:js.node.url.URL->SessionOptions->js.node.stream.Duplex.IDuplex;
-	@:optional
-	var protocol:haxe.extern.EitherType<String, String>;
+	@:optional var maxReservedRemoteStreams:Float;
+	@:optional var createConnection:js.node.url.URL->SessionOptions->js.node.stream.Duplex.IDuplex;
+	@:optional var protocol:haxe.extern.EitherType<String, String>;
 };
 
 typedef ServerSessionOptions = {
 	> SessionOptions,
-	@:optional
-	var Http1IncomingMessage:Dynamic;
-	@:optional
-	var Http1ServerResponse:Dynamic;
-	@:optional
-	var Http2ServerRequest:Dynamic;
-	@:optional
-	var Http2ServerResponse:Dynamic;
+	@:optional var Http1IncomingMessage:Dynamic;
+	@:optional var Http1ServerResponse:Dynamic;
+	@:optional var Http2ServerRequest:Dynamic;
+	@:optional var Http2ServerResponse:Dynamic;
 };
 
 typedef SecureClientSessionOptions = {
@@ -137,10 +102,8 @@ typedef ServerOptions = {
 
 typedef SecureServerOptions = {
 	> SecureServerSessionOptions,
-	@:optional
-	var allowHTTP1:Bool;
-	@:optional
-	var origins:Array<String>;
+	@:optional var allowHTTP1:Bool;
+	@:optional var origins:Array<String>;
 };
 
 extern class Http2Server extends js.node.net.Server {

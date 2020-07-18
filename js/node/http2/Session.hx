@@ -1,65 +1,41 @@
 package js.node.http2;
 typedef Settings = {
-	@:optional
-	var headerTableSize : Float;
-	@:optional
-	var enablePush : Bool;
-	@:optional
-	var initialWindowSize : Float;
-	@:optional
-	var maxFrameSize : Float;
-	@:optional
-	var maxConcurrentStreams : Float;
-	@:optional
-	var maxHeaderListSize : Float;
-	@:optional
-	var enableConnectProtocol : Bool;
+	@:optional var headerTableSize : Float;
+	@:optional var enablePush : Bool;
+	@:optional var initialWindowSize : Float;
+	@:optional var maxFrameSize : Float;
+	@:optional var maxConcurrentStreams : Float;
+	@:optional var maxHeaderListSize : Float;
+	@:optional var enableConnectProtocol : Bool;
 };
 
 typedef ClientSessionRequestOptions = {
-	@:optional
-	var endStream : Bool;
-	@:optional
-	var exclusive : Bool;
-	@:optional
-	var parent : Float;
-	@:optional
-	var weight : Float;
-	@:optional
-	var waitForTrailers : Bool;
+	@:optional var endStream : Bool;
+	@:optional var exclusive : Bool;
+	@:optional var parent : Float;
+	@:optional var weight : Float;
+	@:optional var waitForTrailers : Bool;
 };
 typedef SessionState = {
-	@:optional
-	var effectiveLocalWindowSize : Float;
-	@:optional
-	var effectiveRecvDataLength : Float;
-	@:optional
-	var nextStreamID : Float;
-	@:optional
-	var localWindowSize : Float;
-	@:optional
-	var lastProcStreamID : Float;
-	@:optional
-	var remoteWindowSize : Float;
-	@:optional
-	var outboundQueueSize : Float;
-	@:optional
-	var deflateDynamicTableSize : Float;
-	@:optional
-	var inflateDynamicTableSize : Float;
+	@:optional var effectiveLocalWindowSize : Float;
+	@:optional var effectiveRecvDataLength : Float;
+	@:optional var nextStreamID : Float;
+	@:optional var localWindowSize : Float;
+	@:optional var lastProcStreamID : Float;
+	@:optional var remoteWindowSize : Float;
+	@:optional var outboundQueueSize : Float;
+	@:optional var deflateDynamicTableSize : Float;
+	@:optional var inflateDynamicTableSize : Float;
 };
 extern class Http2Session extends js.node.events.EventEmitter<Http2Session> {
 	var readonly : Dynamic;
-	@:optional
-	var alpnProtocol : String;
+	@:optional var alpnProtocol : String;
 	var closed : Bool;
 	var connecting : Bool;
 	var destroyed : Bool;
-	@:optional
-	var encrypted : Bool;
+	@:optional var encrypted : Bool;
 	var localSettings : Settings;
-	@:optional
-	var originSet : Array<String>;
+	@:optional var originSet : Array<String>;
 	var pendingSettingsAck : Bool;
 	var remoteSettings : Settings;
 	var socket : haxe.extern.EitherType<js.node.net.Socket, js.node.tls.TLSSocket>;
