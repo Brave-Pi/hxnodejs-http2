@@ -1,4 +1,5 @@
 package js.node.http2;
+
 @:jsRequire('http2')
 extern class Constants {
 	static var NGHTTP2_SESSION_SERVER:Float;
@@ -209,13 +210,17 @@ extern class Constants {
 	static var HTTP_STATUS_BANDWIDTH_LIMIT_EXCEEDED:Float;
 	static var HTTP_STATUS_NOT_EXTENDED:Float;
 	static var HTTP_STATUS_NETWORK_AUTHENTICATION_REQUIRED:Float;
+
 	static function getDefaultSettings():Settings;
 	static function getPackedSettings(settings:Settings):Buffer;
 	static function getUnpackedSettings(buf:Uint8Array):Settings;
+
 	@:overload(function(options:ServerOptions, ?onRequestHandler:Http2ServerRequest->Http2ServerResponse->Void):Http2Server {})
 	static function createServer(?onRequestHandler:Http2ServerRequest->Http2ServerResponse->Void):Http2Server;
+
 	@:overload(function(options:SecureServerOptions, ?onRequestHandler:Http2ServerRequest->Http2ServerResponse->Void):Http2SecureServer {})
 	static function createSecureServer(?onRequestHandler:Http2ServerRequest->Http2ServerResponse->Void):Http2SecureServer;
+
 	@:overload(function(authority:haxe.extern.EitherType<String, js.node.url.URL>,
 		?options:haxe.extern.EitherType<ClientSessionOptions, SecureClientSessionOptions>,
 		?listener:ClientHttp2Session -> haxe.extern.EitherType<js.node.net.Socket, js.node.tls.TLSSocket>->Void):ClientHttp2Session {})

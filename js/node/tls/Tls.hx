@@ -1,4 +1,5 @@
 package js.node.tls;
+
 import js.node.tls.SecureContext;
 
 typedef CommonConnectionOptions = {
@@ -9,6 +10,7 @@ typedef CommonConnectionOptions = {
 	@:optional var SNICallback : String -> (haxe.extern.EitherType<Error, Null<Error>> -> js.node.tls.SecureContext -> Void) -> Void;
 	@:optional var rejectUnauthorized : Bool;
 };
+
 typedef TlsOptions = {
 	>SecureContextOptions,
 	>CommonConnectionOptions,
@@ -18,10 +20,12 @@ typedef TlsOptions = {
 	@:optional function pskCallback(socket:TLSSocket, identity:String):haxe.extern.EitherType<DataView, haxe.extern.EitherType<TypedArray, Null<Any>>>;
 	@:optional var pskIdentityHint : String;
 };
+
 typedef PSKCallbackNegotation = {
 	var psk : haxe.extern.EitherType<DataView, TypedArray>;
 	var identitty : String;
 };
+
 typedef ConnectionOptions = {
 	>SecureContextOptions,
 	>CommonConnectionOptions,
