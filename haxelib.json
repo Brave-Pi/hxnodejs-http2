@@ -1,0 +1,21 @@
+{
+	"name": "hxnodejs-http2",
+	"description": "Haxe externs for the node Http/2 module",
+	"classPath": ".",
+	"dependencies": {
+		"hxnodejs": ""
+	},
+	"url": "http://github.com/brave-pi/hxnodejs-http2",
+	"contributors": [
+		"piboistudios",
+		"PhilipHayes"
+	],
+	"version": "0.0.0",
+	"releasenote": "Initial release.",
+	"tags": [
+		"hxnodejs",
+		"http2",
+		"node"
+	],
+	"license": "MIT"
+}
